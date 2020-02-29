@@ -6,4 +6,5 @@ const userSchema = new mongoose.Schema({
   _id: { type: String, 'default': shortid.generate }
 });
 
+
 module.exports = mongoose.model("User", userSchema);

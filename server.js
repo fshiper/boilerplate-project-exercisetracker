@@ -6,7 +6,6 @@ const api = require('./api');
 
 app.set("port", process.env.PORT || 8081);
 app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
 app.use(cors())
 
 
@@ -19,7 +18,7 @@ app.use('/api', api);
 
 // Not found middleware
 app.use((req, res, next) => {
-  return next({status: 404, message: 'not found'})
+  return next({status: 404, message: `Path ${req.path} not found.`})
 })
 
 // Error Handling middleware
